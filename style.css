@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+  }/* 박스모델에 패팅과 보더의 사이즈를 아이템 너비와 높이에 포함해 달라고 말하는 거예요 */
+
+:root{
+    --text-color:#f0f4f5;
+    --background-color:#263343;
+    --accent-color:#d49466;
+}
+body{
+    margin:0px;
+    font-family:DotGothic16;
+}
+
+a{
+    text-decoration: none;
+    color:var(--text-color);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: var(--background-color);
+}
+.navbar_logo{
+    font-size: 30px;
+}
+
+.navbar_logo i {
+    color: var(--accent-color);
+}
+
+.navbar_menu{
+    display: flex;
+    list-style: none;
+    font-size: 15px;
+    padding: 0px;
+}
+
+.navbar_menu li{
+    padding: 8px 12px;
+}
+
+.navbar_menu li:hover{
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+.navbar_icon{
+    display: flex;
+    list-style: none;
+    font-size: 15px;
+    padding: 0;
+    color:var(--text-color);
+}
+
+.navbar_icon li{
+    padding: 8px 12px;
+}
+
+.navbar_toggleBtn{
+    position: absolute;
+    color:var(--accent-color);
+    right:25px;
+    font-size:30px;
+    display:none;
+}
+
+
+@media screen and (max-width:600px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+    .navbar_menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none;
+    }
+    .navbar_menu li{
+        width:100%;
+        text-align: center;
+    }
+    .navbar_icon {
+        justify-content: center;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar_toggleBtn{
+        display: block;
+    }
+      /* When toggle button is clicked - active state */
+    .navbar_menu.active,
+    .navbar_icon.active {
+        display: flex;
+    }
+
+}
